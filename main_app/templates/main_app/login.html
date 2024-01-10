@@ -1,0 +1,39 @@
+{% extends 'main_app/base.html' %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+    <div class="flex justify-center items-center bg-blue-100 p-6 rounded-2xl">
+        <!-- <h1 class="mb-6 text-3xl">Login</h1> -->
+
+        <form action="?next=/" method="post" class="bg-white shadow-md rounded-xl px-8 pt-6 pb-7 py-4 mb-4 w-full sm:w-1/2 lg:w-1/3">
+            {% csrf_token %}
+
+            <div class="">
+                <div class="mb-4">
+                    <div class="mb-3">
+                        <label for="username" class="inline-block mb-2">Username</label><br>
+                        {{ form.username }}
+                    </div>
+                </div>
+<br>
+                <div class="mb-6">
+                    <div class="mb-3">
+                        <label for="username" class="inline-block mb-2">Password</label><br>
+                        {{ form.password }}
+                    </div>
+                </div>
+            </div>
+            {% if form.errors or form.non_field_errors %}
+                <div class="mb-3 p-3 bg-red-100 rounded-xl">
+                    {% for field in form  %}
+                        {{ field.errors }}
+                    {% endfor %}
+                    {{ form.non_field_errors }}
+                </div>
+            {% endif %}
+            <button class="py-2 px-3 mx-auto text-lg bg-blue-500 hover:bg-blue-800 rounded-xl text-white transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">Login</button>
+            <a href="{% url 'main_app:signup' %}"><button class="py-2 px-3 mx-auto ml-3 text-lg bg-blue-500 hover:bg-blue-800 rounded-xl text-white transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">Sign Up</button></a>
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'main_app/base.html' %}
+{% block title %}{{ work.name }}{% endblock %}
+
+{% block content %}
+    <div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
+            <img src="{{ work.image.url }}" class="rounded-lg">
+        </div><br>
+
+        <div class="p-3 rounded-xl" style="background-color: aliceblue;">
+            <h2 class="text-start text-2xl">Class:</h2>
+            <p>{{ work.classname }}</p>
+            <h2 class="text-2xl mb-6">{{ work.name }}</h2>
+            <h2 class="text-base text-2xl text-start"><strong>Description:</strong></h2>
+            <p>{{ work.description }}</p>
+            <label for="category" class="text-base text-2xl text-start"><strong>Project Type:</strong></label>
+            <p>{{ work.category }}</p>
+            <label for="time_stamp" class="text-base text-2xl text-start"><strong>Posted at:</strong></label>
+            <p>{{ work.created_at }}</p>
+            {% if work.submitted_on %}
+                <label for="submitted"><strong>To Be Submitted On:</strong> {{ work.submitted_on }}</label>
+            {% else %}
+                <label for="submitted"><strong>To Be Submitted On:</strong> null</label>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
