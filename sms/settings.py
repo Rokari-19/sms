@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-vdykpbz!-)_xr-wgbc*!6vvyzv4rhx$k2pbclk^9mbjrscv4@@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['sms-sepia-five.vercel.app']
 
 
 # Application definition
