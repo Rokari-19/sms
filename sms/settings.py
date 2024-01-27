@@ -75,13 +75,23 @@ WSGI_APPLICATION = 'sms.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'URL': 'postgresql://postgres:gf5f1C6aFggGeB6253dcF2bdfGc65g-4@monorail.proxy.rlwy.net:36396/railway',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'gf5f1C6aFggGeB6253dcF2bdfGc65g-4',
+        'HOST': 'monorail.proxy.rlwy.net',
+        'PORT': "36396",
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
