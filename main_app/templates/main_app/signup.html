@@ -43,6 +43,7 @@
           {{ form.password2 }}
       </div>
       <button class="py-3 px-3 mx-auto text-lg bg-blue-500 hover:bg-blue-800 rounded-xl text-white transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">sign up</button>
+      <a href="{% url 'main_app:login' %}" class="py-4 px-3 mx-auto ml-3 text-lg bg-blue-500 hover:bg-blue-800 rounded-xl text-white transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">Log In</a>
     </form>
   </div>
 {% endblock %}

@@ -9,7 +9,6 @@ urlpatterns = [
     path('', index, name='index'),
     path('signup/', signup, name='signup'),
     path('login/', log_views.LoginView.as_view(template_name='main_app/login.html', authentication_form=LoginForm), name='login'),
-    # path('logout/', log_views.LogoutView.as_view(template_name='users/login.html'), name='logout'),
     path('logout/',logOut, name='logout')
     
 ]
